@@ -1,0 +1,18 @@
+[package]
+name = "wasm-node-externref"
+version = "0.1.0"
+authors = ["Mario Reder <mreder1289@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+js-sys = "=0.3.44"
+wasm-bindgen = "=0.2.67"
+
+[dependencies.web-sys]
+version = "=0.3.44"
+features = [
+  "console",
+]
