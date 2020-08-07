@@ -28,3 +28,11 @@ CompileError: WebAssembly.Module(): Compiling function #17:"wasm_bindgen::extern
 ```
 
 Tested with Node 14.17.0 and 12.18.3
+
+This bug doesn't occur with Deno v1.2.2:
+
+```
+cargo build
+wasm-bindgen --reference-types --out-dir ./dist --target deno ./target/wasm32-unknown-unknown/debug/wasm_node_externref.wasm
+deno run -A --v8-flags=--experimental-wasm-reftypes index.ts
+```
